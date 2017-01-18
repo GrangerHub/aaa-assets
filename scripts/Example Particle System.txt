@@ -1,0 +1,102 @@
+//I've included a basic particle system. This is basically almost the same as
+//the one used in R Funko CZ / ShinyTrem and so this one is basically a
+//orange particle that flies and deposits smaller orange particles (missilePS)
+//When it hits a surface (impactPS) it will spit out small orange particles in
+//a random direction.
+//Commented areas are shown to explain each step.
+//Best you use C highlighting mode when viewing this file.
+
+models/weapons/blaster/missilePS //The name of the particlesystem.
+{ //It looks like a path but that's just the way it is defined.
+  ejector //We are ejecting this particle
+  {
+    particle //Child Particle type (you can have trails instead)
+    {
+      shader sync gfx/blaster/orange_particle //Name of shader
+
+      displacement 0 0 0 ~2.0 //Random displacement up to 2 units around the particle
+      //Note that the X and Y values are in relation to the <world> and not the particle, so don't bother using them
+      //Format: X, Y (Horizontal Plane), Z (Vertical, POSITIVE UP), RandomDirection
+
+      parentVelocityFraction 0.5 //Spawn it with 50% of the particle's velocity
+
+      radius 0 1.5 0.0 //The size of the sprite, second number when spawned, third number when dies. Basically, The particle gets smaller until it dies.
+      alpha  0 1.0 0.0 //The transparency of the sprite, second number is when spawned and third number is when it dies. It basically fades away.
+      bounce 0.01 //When hitting a wall, it will bounce, retaining this much speed. Be cautioned though, if the particle spawns with the radius touching the <world> it cannot move.
+
+      lifeTime 400 //How long it will last before it gets deleted
+    }
+
+    count infinite //Just keep spawning it until the parent dies
+    delay 0 //Spawning delay of this child particle, in this case it spawns immediately after the parent was spawned
+    period 10 - ~0% //Interval between spawning. Here, it will spawn 100 times a second, plus no random interval. The ~#% means this random interval gets added ontop of the other interval defined, e.g. 50 - ~50% means it will spawn randomly between 0.05 to 0.1 second intervals.
+  }
+}
+
+models/weapons/blaster/impactPS
+{
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/sprites/smoke //Remember this name is defined in the .shader files
+
+      displacement 0 0 0 ~3.0
+      normalDisplacement 3.0 //Perpendicular to the wall the parent particle hit. This is added onto the displacement setting, doesn't matter which order.
+
+      velocityType      normal //Defined upon spawning
+      velocityDir       linear //Do not change direction nor speed, well at least until the acceleration gets defined below
+      velocityMagnitude 20 //Spits out 20 units/second ~= 0.62 m/s
+      velocity          0 0 0 0
+
+      accelerationType      static //Acceleration does not decrease or increase
+      accelerationDir       linear //Do not change direction
+      accelerationMagnitude 300
+      acceleration          0 0 1 0 //Rises against gravity at 300 units/s/s, ~= 9.4 m/s/s. Real life gravity = 9.8 m/s/s
+      //
+
+      radius 0 4.0 6.0 //Grows bigger
+      alpha  0 0.5 0.0 //Fades out
+      rotation 0 ~360 - //Spawns with a random rotation (so the smoke particle doesn't look too spammy)
+      bounce 0.0 //Sit on the ceiling if it hits the ceiling instead of bouncing off
+
+      lifeTime 500
+    }
+
+    count 20 //Spawn 20 at most
+    delay ~250 //Spawns between 0 and 0.25 seconds after parent spawn
+    period 10 - ~0% //100 blobs per second
+  }
+
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/blaster/orange_particle
+
+      normalDisplacement 3.0
+      dynamicLight    20 20 0 { 0.3 0.3 0.0 } //Spawn some light with range X/Y/Z (I think, needs confirmation) and { R G B } colour
+
+      velocityType      normal
+      velocityDir       linear
+      velocityMagnitude 200
+      velocity          0 0 0 ~160 //Initial Random velocity in a random direction up to 160 units/sec
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 600 //600 ups ~= 19 m/s/s, in-game gravity = 800 (25m/s/s)
+      acceleration          0 0 -1 0 //Falls down
+
+      radius 0 3.0 0.0 //Gets smaller
+      alpha  0 1.0 0.0 //Fades away
+      rotation 0 ~360 - //Random oriented sprite
+      bounce 0.2 //Bounce with 20% speed
+
+      lifeTime 400 //Fades away after 400msec
+    }
+
+    count 3~6 //Since this is an instantaneous thing, spawn between 3 and 6 particles at once
+    delay 0 //Spawn without delay
+    period 0 - ~0% //period delay! Don't ever use count infinity and period 0!!!
+  }
+}
