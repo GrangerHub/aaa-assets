@@ -9,8 +9,11 @@ sound/upgrades/jetpack/low.wav                          	Pikachu                
 sound/upgrades/jetpack/jump.wav                         	alexmol @ freesound.org, Q009,
 									                    	Pikachu										cc-by-sa 3.0
 sound/upgrades/jetpack/lowfuel.wav                      	Pikachu										cc0
-sound/upgrades/jetpack/nojumpfuel.wav                   	Pikachu										cc0 
-sound/upgrades/jetpack/refuel.wav                       	joeseshon @ freesound.org, 
+sound/upgrades/jetpack/nojumpfuel.wav                   	Pikachu										cc0
+sound/upgrades/jetpack/refuel.wav                       	joeseshon @ freesound.org,
 									                    	alexmol @ freesound.org, Pikachu			cc-by
 sound/misc/213096__soundsexciting__gong-with-music.wav     	SoundsExciting @ freesound.org         	 	cc0 1.0
 sound/misc/276254__dynajinn__fight-voiceover-fight.wav  	dynajinn @ freesound.org                 	cc0 1.0
+models/weapons/blaster/blaster.wav												ZdrytchX									CC-BY
+models/weapons/blaster/hit.wav														ZdrytchX									CC-BY
+models/weapons/blaster/missile.wav												ZdrytchX									CC-BY
