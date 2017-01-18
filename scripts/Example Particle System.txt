@@ -12,7 +12,7 @@ models/weapons/blaster/missilePS //The name of the particlesystem.
   {
     particle //Child Particle type (you can have trails instead)
     {
-      shader sync gfx/blaster/orange_particle //Name of shader
+      shader sync gfx/blaster/orange_particle //Name of shader, defined in data.1.1.0-pk3
 
       displacement 0 0 0 ~2.0 //Random displacement up to 2 units around the particle
       //Note that the X and Y values are in relation to the <world> and not the particle, so don't bother using them
@@ -39,7 +39,7 @@ models/weapons/blaster/impactPS
   {
     particle
     {
-      shader sync gfx/sprites/smoke //Remember this name is defined in the .shader files
+      shader sync gfx/sprites/smoke //Remember this name is defined in the .shader files. Defined in data.1.1.0-pk3
 
       displacement 0 0 0 ~3.0
       normalDisplacement 3.0 //Perpendicular to the wall the parent particle hit. This is added onto the displacement setting, doesn't matter which order.
