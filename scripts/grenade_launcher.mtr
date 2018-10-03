@@ -1,0 +1,35 @@
+models/weapons/grenade_launcher/glauncher
+{
+  {
+    map models/weapons/grenade_launcher/launcher_d.jpg
+	rgbgen lightingdiffuse
+  }
+  {
+    stage normalparallaxmap
+    map models/weapons/grenade_launcher/launcher_n.tga
+	normalScale 1 1
+  }
+  {
+    stage specularmap
+    map models/weapons/grenade_launcher/launcher_s.tga
+	specularReflectance 0.52050
+  }
+}
+
+models/weapons/grenade_launcher/glauncher_chamber
+{
+  {
+    map models/weapons/grenade_launcher/launcher_d.jpg
+	rgbgen lightingdiffuse
+  }
+  {
+    stage normalparallaxmap
+    map models/weapons/grenade_launcher/launcher_n.tga
+    normalScale 1 1
+  }
+  {
+    stage specularmap
+    map models/weapons/grenade_launcher/launcher_s.tga
+	specularReflectance 0.52050
+  }
+}

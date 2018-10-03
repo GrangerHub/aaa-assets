@@ -1,0 +1,61 @@
+models/weapons/ckit/ckitTS
+{
+	beam
+	{
+		shader			gfx/ckit/ckittrail
+		width			6.0 4.0
+		alpha			1.0 0.1
+		textureType		stretch 0.94 0.03
+	}
+	lifeTime 70
+}
+
+models/weapons/prifle/missileTS
+{
+	beam
+	{
+		shader			gfx/prifle/red_streak
+		segments		2
+		width			6.0 4.0
+		alpha			1.0 0.1
+		segmentTime		120
+		textureType		stretch 0.0 1.0
+	}
+}
+
+models/weapons/lev2zap/lightning
+{
+	beam
+	{
+		shader			models/ammo/tesla/tesla_bolt
+		segments		5
+		width			16.0 16.0
+		color			{ 0.8 0.8 0.8 } -
+		textureType		repeat front 100.0
+		jitter			4.0 200
+		jitter			1.0 20
+	}
+	beam
+	{
+		shader			models/ammo/tesla/tesla_bolt
+		segments		8
+		width			5.0 5.0
+		color			{ 0.5 0.8 1.0 } -
+		textureType		repeat back 50.0
+		jitter			2.0 150
+		jitter			1.0 30
+	}
+}
+
+models/weapons/lgun/impactTS
+{
+	beam
+	{
+		shader			gfx/lasgun/purple_trail
+    	textureType		stretch 0.0 1.0
+		segments		5
+    	segmentTime		10
+		alpha			0.5 0
+		width			1 1
+	}
+}

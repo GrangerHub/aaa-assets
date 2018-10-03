@@ -1,0 +1,39 @@
+models/players/human_base/h_base
+{
+	cull disable
+	{
+		map models/players/human_base/h_base.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/human_base/h_helmet
+{
+	cull disable
+	{
+		map models/players/human_base/h_helmet.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/human_bsuit/human_bsuit
+{
+	cull disable
+	{
+		map models/players/human_bsuit/human_bsuit.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+	{
+	stage normalparallaxmap
+	map models/players/human_bsuit/human_bsuit_nh.tga
+	normalScale 1 1
+	}
+	{
+	stage specularmap
+	map models/players/human_bsuit/human_bsuit_s.tga
+	specularReflectance 0.5
+	}
+}

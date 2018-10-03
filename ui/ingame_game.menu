@@ -846,6 +846,24 @@
       name info
       group gameGrp
       rect 0 (INFO_Y+(8*INFOELEM_H)) W INFOELEM_H
+      type ITEM_TYPE_YESNO
+      style WINDOW_STYLE_EMPTY
+      text "Private Msg Logging:"
+      cvar ui_serverinfo_logPrivateMessages
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx INFO_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_FALSE
+      decoration
+    }
+
+    itemDef
+    {
+      name info
+      group gameGrp
+      rect 0 (INFO_Y+(9*INFOELEM_H)) W INFOELEM_H
       type ITEM_TYPE_EDITFIELD
       style WINDOW_STYLE_EMPTY
       text "Version:"

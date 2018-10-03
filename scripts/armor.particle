@@ -1,0 +1,169 @@
+bsuitPlayerGibsPS
+{
+  ejector
+  {
+    particle
+    {
+      model models/fx/bsuit_gibs/bsgib1.md3 models/fx/bsuit_gibs/bsgib2.md3 models/fx/bsuit_gibs/bsgib3.md3 models/fx/bsuit_gibs/bsgib4.md3 models/fx/bsuit_gibs/bsgib5.md3 models/fx/bsuit_gibs/bsgib7.md3 models/fx/bsuit_gibs/bsgib8.md3
+
+      displacement 0 0 10 ~0
+
+      velocityType      static
+      velocityDir       linear
+      velocityMagnitude 100~75%
+      velocity          0 0 0.25 ~60
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 800
+      acceleration          0 0 -1 0
+
+      radius          0 1.0 -
+      bounce          0.1
+      bounceSound     ~1 sound/misc/bsgibbounce.wav
+	  
+      lifeTime        10000
+    }
+
+    count 8
+    delay 0
+    period 10 - ~0%
+  }
+  
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/sprites/smoke
+
+      displacement 0 0 8 ~0
+
+      velocityType      static
+      velocityDir       linear
+      velocityMagnitude 50
+      velocity          0 0 1 ~60
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 50
+      acceleration          0 0 1 0
+
+      radius 0 10.0 50.0
+      alpha  0 0.5 0.0
+      rotation 0 ~360 -
+      bounce 0.5
+
+      lifeTime 500~75%
+    }
+
+    count 8
+    delay 0
+    period 0 - ~0%
+  }
+  
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/damage/bssparks
+
+      displacement 0 0 0 ~30
+      normalDisplacement  20
+
+      velocityType      static
+      velocityDir       linear
+      velocityMagnitude 20
+      velocity          0 0 -1 ~0
+
+      radius 0 4.0 3.0
+      alpha  0 1.0 0.0
+      rotation 0 ~360 -
+      bounce 0.0
+
+      lifeTime 350~75%
+    }
+
+    count 12
+    delay 0
+    period 0 - ~0%
+  }
+  
+  ejector
+  {
+    particle
+    {
+      dynamicLight    0 300 0 { 1.0 0.75 0.0 }
+
+      lifeTime        600~100
+    }
+
+    count 1
+    delay 0
+    period 0 - ~0%
+  }
+}
+
+humanWeakArmorPS
+{
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/sprites/smoke
+
+      displacement 0 0 8 ~0
+
+      velocityType      static
+      velocityDir       linear
+      velocityMagnitude 50
+      velocity          0 0 1 ~60
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 50
+      acceleration          0 0 1 0
+
+      radius 0 10.0 50.0
+      alpha  0 0.25 0.0
+      rotation 0 ~360 -
+      bounce 0.5
+
+      lifeTime 1500~50%
+    }
+
+    count infinite
+    delay 0
+    period 200 - ~0%
+  }
+
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/sprites/spark
+
+      displacement 0 0 11 ~0
+
+      velocityType      static
+      velocityDir       linear
+      velocityMagnitude 200
+      velocity          0 0 1 ~60
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 800
+      acceleration          0 0 -1 0
+
+      radius 0 4.0 2.0
+      alpha  0 1.0 0.0
+      rotation 0 ~360 -
+      bounce 0.6
+
+      lifeTime 1500~50%
+    }
+
+    count infinite
+    delay 0
+    period 700 - ~0%
+  }
+}

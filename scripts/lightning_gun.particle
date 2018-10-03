@@ -1,0 +1,35 @@
+models/weapons/lightning/secondaryImpactPS
+{
+  ejector
+  {
+    particle
+    {
+      shader sync gfx/lightning/blue_blob
+
+      displacement 0 0 0 ~2.0
+
+      normalDisplacement 10.0
+
+      velocityType      normal
+      velocityDir       linear
+      velocityMagnitude 150
+      velocity          0 0 0 ~160
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 300
+      acceleration          0 0 -1 0
+
+      radius 0 .2 1.0
+      alpha  0 1.0 0.0
+      rotation 0 ~360 -
+      bounce 0.8
+
+      lifeTime 2000~1000
+    }
+
+    count 10
+    delay 0
+    period 0 - ~0%
+  }
+}

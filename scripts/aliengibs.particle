@@ -1,0 +1,33 @@
+spitfireWingsGibsPS
+{
+  ejector
+  {
+    particle
+    {
+      model models/fx/spitfiregibs/wing1.md3 models/fx/spitfiregibs/wing2.md3 models/fx/spitfiregibs/wing3.md3 models/fx/spitfiregibs/wing4.md3 
+
+      displacement 0 0 10 ~0
+
+      velocityType      static
+      velocityDir       linear
+      velocityMagnitude 200~75%
+      velocity          0 0 1 ~60
+
+      accelerationType      static
+      accelerationDir       linear
+      accelerationMagnitude 400
+      acceleration          0 0 -1 0
+
+      radius          0 1.0 -
+      bounce          0.2
+      bounceSound     ~1 models/weapons/spitfire/airpounce.wav
+	  
+      lifeTime        10000
+    }
+
+    count 4
+    delay 0
+    period 10 - ~0%
+  }
+}
+

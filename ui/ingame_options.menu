@@ -1641,7 +1641,7 @@
       action
       {
         play "sound/misc/menu1.wav";
-        uiScript glCuston
+        uiScript glCustom
       }
     }
 
@@ -1964,7 +1964,7 @@
       style WINDOW_STYLE_EMPTY
       text "FOV offset:"
       cvar "cg_fovOffset"
-      maxchars 6
+      maxchars 3
       rect CONTENT_X (CONTENT_Y+(2*ELEM_H)) CONTENT_W ELEM_H
       textalign ALIGN_RIGHT
       textvalign VALIGN_CENTER
@@ -2155,7 +2155,6 @@
         play "sound/misc/menu1.wav";
       }
     }
-
 //////// GL INFO
 
     itemDef
@@ -2590,6 +2589,351 @@
       textscale .25
       forecolor 1 1 1 1
       visible MENU_FALSE
+    }
+//////// OpenGL2 Options
+
+    itemDef
+    {
+      name system
+      text "OpenGL2"
+      group optionsGrp
+      style WINDOW_STYLE_EMPTY
+      rect 0 ((2*BORDER)+TOPBUTT_H+(5*SIDEBUTT_H)) SIDEBUTT_W SIDEBUTT_H
+      type ITEM_TYPE_BUTTON
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_FALSE
+      action
+      {
+        play "sound/misc/menu1.wav";
+        hide optionsGrp;
+        show system;
+        show gl2options
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_MULTI
+      text "Enabled Renderer:"
+      cvar "cl_renderer"
+      cvarStrList { "OpenGL2 (new)", "opengl2",
+                    "OpenGL1 (old)", "opengl1" }
+      rect SCONTENT_X (SCONTENT_Y+(0*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_FALSE
+      action
+      {
+        play "sound/misc/menu1.wav";
+        exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Physically Based Rendering:"
+      cvar "r_pbr"
+      rect SCONTENT_X (SCONTENT_Y+(1*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Normal (Bump) Maps:"
+      cvar "r_normalMapping"
+      rect SCONTENT_X (SCONTENT_Y+(2*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Naively Generate Normal Maps:"
+      cvar "r_genNormalMaps"
+      rect SCONTENT_X (SCONTENT_Y+(3*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Ambient Occlusion (SSAO):"
+      cvar "r_ssao"
+      rect SCONTENT_X (SCONTENT_Y+(4*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Post Processing:"
+      cvar "r_postProcess"
+      rect SCONTENT_X (SCONTENT_Y+(5*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Screen Tone Mapping:"
+      cvar "r_toneMap"
+      rect SCONTENT_X (SCONTENT_Y+(6*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Specular Surface Lighting:"
+      cvar "r_specularMapping"
+      rect SCONTENT_X (SCONTENT_Y+(7*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_MULTI
+      text "Parallax Height Maps:"
+      cvar "r_parallaxMapping"
+      
+      cvarFloatList { "No" 0 "Use Parallax Occlusion" 1 "Use Relief (Slower)" 2 }
+      rect SCONTENT_X (SCONTENT_Y+(8*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_FALSE
+      action
+      {
+        play "sound/misc/menu1.wav";
+        exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Cube mapped environments:"
+      cvar "r_cubeMapping"
+      rect SCONTENT_X (SCONTENT_Y+(9*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Draw Sun Rays:"
+      cvar "r_drawSunRays"
+      rect SCONTENT_X (SCONTENT_Y+(10*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Draw Sun:"
+      cvar "r_drawSun"
+      rect SCONTENT_X (SCONTENT_Y+(11*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_YESNO
+      text "Sun Shadows:"
+      cvar "r_sunShadows"
+      rect SCONTENT_X (SCONTENT_Y+(12*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_TRUE
+      action
+      {
+        play "sound/misc/menu1.wav";
+		exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_MULTI
+      text "Sunlight Mode:"
+      cvar "r_sunlightMode"
+      
+      cvarFloatList { "None" 0 "Multiply (Good Quality)" 1 "Add (Best Quality)" 2 }
+      rect SCONTENT_X (SCONTENT_Y+(13*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_FALSE
+      action
+      {
+        play "sound/misc/menu1.wav";
+        exec "vid_restart"
+      }
+    }
+	
+	itemDef
+    {
+      name gl2options
+      group optionsGrp
+      type ITEM_TYPE_MULTI
+      text "Dynamic Lights Mode:"
+      cvar "r_dlightMode"
+      
+      cvarFloatList { "Off" 0 "Lighting, No Shadows" 1 "Light & Shadows" 2 }
+      rect SCONTENT_X (SCONTENT_Y+(14*ELEM_H)) SCONTENT_W ELEM_H
+      textalign ALIGN_RIGHT
+      textvalign VALIGN_CENTER
+      textalignx SCONTENT_OFF
+      textscale .25
+      forecolor 1 1 1 1
+      visible MENU_FALSE
+      action
+      {
+        play "sound/misc/menu1.wav";
+        exec "vid_restart"
+      }
     }
   }
 }

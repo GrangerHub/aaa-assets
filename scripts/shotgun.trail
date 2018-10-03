@@ -1,0 +1,13 @@
+shotgunsparks
+{
+  beam
+  {
+    shader		gfx/shotgun/shotgunspark
+    segments	2
+    width		0.15 0.15
+    alpha 		1.0 0.0
+    segmentTime	75
+    textureType	stretch 1.0 0.0
+  }
+  lifeTime 70
+}

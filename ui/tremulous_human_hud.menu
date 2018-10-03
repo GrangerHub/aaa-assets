@@ -104,6 +104,69 @@
     //DYNAMIC OBJECTS//
     ///////////////////
 
+    //LEFT CAP
+    itemDef
+    {
+      name "left-cap"
+      rect 59 400 80 15
+      aspectBias ALIGN_LEFT
+      visible MENU_TRUE
+      decoration
+      forecolor COMMON_HUD_R COMMON_HUD_G COMMON_HUD_B 0.25
+      background "ui/assets/human/left-cap.tga"
+      ownerdraw CG_PLAYER_EQUIP_HUD
+    }
+
+    //JETPACK ICON
+    itemDef
+    {
+      name "jetpack-icon"
+      rect 124 402 14 12
+      aspectBias ALIGN_LEFT
+      visible MENU_TRUE
+      decoration
+      forecolor COMMON_HUD_R COMMON_HUD_G COMMON_HUD_B 0.6
+      background "ui/assets/human/jetpackicon.tga"
+      ownerdraw CG_PLAYER_JETPACK_ICON
+    }
+
+    //JETPACK FUEL
+    itemDef
+    {
+      name "jetpack-fuel"
+      rect 70 402 45 11.25
+      aspectBias ALIGN_LEFT
+      visible MENU_TRUE
+      decoration
+      forecolor COMMON_HUD_R COMMON_HUD_G COMMON_HUD_B 0.5
+      ownerdraw CG_PLAYER_JETPACK_FUEL
+    }
+
+    //SHIELD ICON
+    itemDef
+    {
+      name "shield"
+      rect 124 402 10 13
+      aspectBias ALIGN_LEFT
+      visible MENU_TRUE
+      decoration
+      forecolor COMMON_HUD_R COMMON_HUD_G COMMON_HUD_B 0.8
+      background "ui/assets/human/shield.tga"
+      ownerdraw CG_PLAYER_ARMOR_SHIELD
+    }
+
+    //ARMOR
+    itemDef
+    {
+      name "armor"
+      rect 70 402 45 11.25
+      aspectBias ALIGN_LEFT
+      visible MENU_TRUE
+      decoration
+      forecolor COMMON_HUD_R COMMON_HUD_G COMMON_HUD_B 0.5
+      ownerdraw CG_PLAYER_ARMOR
+    }
+
     //BOLT
     itemDef
     {

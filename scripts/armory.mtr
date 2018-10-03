@@ -1,0 +1,51 @@
+models/buildables/arm/arm_body.jpg
+{
+	{
+		map models/buildables/arm/arm_body.jpg
+		rgbGen lightingDiffuse
+	}
+	{
+		stage normalparallaxmap
+		map models/buildables/arm/arm_body_nm.tga
+		normalScale 0.8 0.8
+	}
+}
+
+models/buildables/arm/arm_parts.jpg
+{
+	{
+		map models/buildables/arm/arm_parts.jpg
+		rgbGen lightingDiffuse
+	}
+	{
+		stage normalparallaxmap
+		map models/buildables/arm/arm_parts_nm.tga
+		normalScale 0.8 0.8
+	}
+}
+
+models/buildables/arm/arm_body
+{
+	{
+		map models/buildables/arm/arm_body.jpg
+		rgbGen lightingDiffuse
+	}
+	{
+		stage normalparallaxmap
+		map models/buildables/arm/arm_body_nm.tga
+		normalScale 0.8 0.8
+	}
+}
+
+models/buildables/arm/arm_parts
+{
+	{
+		map models/buildables/arm/arm_parts.jpg
+		rgbGen lightingDiffuse
+	}
+	{
+		stage normalparallaxmap
+		map models/buildables/arm/arm_parts_nm.tga
+		normalScale 0.8 0.8
+	}
+}

@@ -243,6 +243,32 @@ itemDef
   background "ui/assets/neutral/charge_bg_h.tga"
 }
 
+//CHARGE STAMINA BAR
+itemDef
+{
+  name "charge"
+  rect 284 456 76 8
+  aspectBias ALIGN_CENTER
+  visible MENU_TRUE
+  decoration
+  forecolor COMMON_HUD_R 0.66 COMMON_HUD_B 0.5
+  ownerdraw CG_PLAYER_CHARGE_STAMINA_BAR
+  background "ui/assets/neutral/charge_cap_h.tga"
+}
+
+//CHARGE STAMINA BAR BG
+itemDef
+{
+  name "chargebg"
+  rect 280 452 84 16
+  aspectBias ALIGN_CENTER
+  visible MENU_TRUE
+  decoration
+  forecolor COMMON_HUD_R 0.66 COMMON_HUD_B 0.25
+  ownerdraw CG_PLAYER_CHARGE_STAMINA_BAR_BG
+  background "ui/assets/neutral/charge_bg_h.tga"
+}
+
 //TEAM OVERLAY
 itemDef
 {
