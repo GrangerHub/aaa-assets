@@ -1,6 +1,6 @@
 #Tremulous 1.3 assets repository
 
-This repository contains all assets from [Tremulous's test server](http://forum.grangerhub.com/t/vanilla-game-mode-for-tremulous-1-3-changelog/1241) for 1.3 release.
+This repository contains all assets from [Tremulous's test server](http://forum.grangerhub.org/t/vanilla-game-mode-for-tremulous-1-3-changelog/1241/13.html) for 1.3 release.
 
 
 ##Tremulous License
